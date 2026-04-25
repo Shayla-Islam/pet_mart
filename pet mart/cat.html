@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PetMart | Cat Supplies</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<header>
+    <h3 class="logo"><a href="index.html" style="color: #222;">PetMart</a></h3>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cat.html" style="color:red">Cat</a></li>
+        <li><a href="dog.html">Dog</a></li>
+        <li><a href="bird.html">Bird</a></li>
+        <li><a href="rabbit.html">Rabbit</a></li>
+    </ul>
+    <div class="nav-icon">
+        <i class='bx bx-search' onclick="toggleSearch()"></i>
+        <div class="cart-icon" onclick="toggleCart()"><i class='bx bx-basket'></i><span id="cartCount">0</span></div>
+        <a href="login.html"><i class='bx bx-user'></i></a>
+    </div>
+</header>
+
+<div id="searchContainer"><input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search cat products..."></div>
+<div id="cartDropdown"><h3>Your Cart</h3><ul id="cartItems"></ul><a href="cart.html" class="main-btn" style="width:100%; text-align:center;">View Full Cart</a></div>
+
+<section class="products" style="margin-top: 120px;">
+    <div class="products-title"><h2>Cat <span>Supplies</span></h2></div>
+    <div class="product-container">
+    <div class="product-box">
+        <h3>Whiskas Dry Food</h3>
+        <img src="image/Documents/cat/whiskas dray food.jpeg">
+        <p class="price">৳950</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Whiskas Dry Food', 950, 'image/cat1.jpg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Cat Litter (5kg)</h3>
+        <img src="image/Documents/cat/cat litter.jpeg">
+        <p class="price">৳750</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Cat Litter (5kg)', 750, 'image/Documents/cat/cat litter.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Scratching Post</h3>
+        <img src="image/Documents/cat/scratching post.jpeg">
+        <p class="price">৳1500</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Scratching Post', 1500, 'image/Documents/cat/scratching post.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Cat Nip Toy</h3>
+        <img src="image/Documents/cat/cat nip toy.jpeg">
+        <p class="price">৳180</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Cat Nip Toy', 180, 'image/Documents/cat/cat nip toy.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Soft Cat Bed</h3>
+        <img src="image/Documents/cat/soft cat bed.jpeg">
+        <p class="price">৳2200</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Soft Cat Bed', 2200, 'image/Documents/cat/soft cat bed.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Cat Grooming Kit</h3>
+        <img src="image/Documents/cat/cat grooming kit.jpeg">
+        <p class="price">৳1100</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Cat Grooming Kit', 1100, 'image/Documents/cat/cat grooming kit.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Tuna Wet Food</h3>
+        <img src="image/Documents/cat/tuna wet food.jpeg">
+        <p class="price">৳120</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Tuna Wet Food', 120, 'image/Documents/cat/tuna wet food.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Mouse Ball Cat Toy</h3>
+        <img src="image/Documents/cat/mouse toy.jpeg">
+        <p class="price">৳120</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Mouse Ball Cat Toy', 120, 'image/Documents/cat/mouse toy.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <h3>Cat Collar Bell</h3>
+        <img src="image/Documents/cat/collar bell.jpeg">
+        <p class="price">৳250</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Cat Collar Bell', 250, 'image/Documents/cat/collar bell.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>PetMart</h3>
+            <p>Your one-stop shop for all pet needs. Quality products and fast delivery guaranteed.</p>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cat.html">Cat Supplies</a></li>
+            <li><a href="dog.html">Dog Supplies</a></li>
+            <li><a href="rabbit.html">Rabbit Supplies</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p><i class='bx bxs-map'></i> Savar, Dhaka, Bangladesh</p>
+            <p><i class='bx bxs-phone'></i> +880 1827 134215</p>
+            <p><i class='bx bxs-envelope'></i> info@petmart.com</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2026 PetMart | All Rights Reserved</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

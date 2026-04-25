@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetMart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+<header>
+    <h3 class="logo"><a href="index.html" style="color: #222;">PetMart</a></h3>
+
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cat.html">Cat</a></li>
+        <li><a href="dog.html">Dog</a></li>
+        <li><a href="bird.html">Bird</a></li>
+        <li><a href="rabbit.html">Rabbit</a></li>
+    </ul>
+
+    <div class="nav-icon">
+        <a href="#"><i class='bx bx-search'></i></a>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class='bx bx-basket'></i>
+            <span id="cartCount">0</span>
+        </div>
+        <a href="signup.html"><i class='bx bx-user'></i></a>
+    </div>
+</header>
+
+<div id="cartDropdown">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <a href="cart.html" style="display: block; text-align: center; background: #ee1c47; color: white; padding: 8px; margin-top: 10px; border-radius: 5px;">View Full Cart</a>
+</div>
+
+<section class="main-home">
+    <div class="main-text">
+        <h1>PetMart</h1>
+        <p>Everything <br>Your Pets Needs,<br>All in One Place</p>
+        <a href="#" class="main-btn">
+            Shop Now <i class='bx bx-right-arrow-alt'></i>
+        </a>
+    </div>
+</section>
+
+<section class="about">
+    <div class="about-title">
+        <h2>About Us</h2>
+    </div>
+
+    <div class="about-container">
+        <div class="about-img">
+            <img src="image/aboutUs.png" alt="About PetMart">
+        </div>
+
+        <div class="about-text">
+            <h3>Why Choose Us?</h3>
+            <p>
+                We provide the best quality food, toys, and care products
+                for your lovely pets. Everything your pet needs in one place.
+            </p>
+            <p>
+                Trusted products, affordable prices, and fast delivery
+                make us the perfect choice for pet lovers.
+            </p>
+            <a href="#" class="about-btn">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="products-title">
+        <h2>Latest <span>Products</span></h2>
+    </div>
+
+    <div class="product-container">
+        <div class="product-box">
+            <span class="discount">-10%</span>
+            <img src="image/dogfood.jpeg" alt="Dog Food">
+            <div class="cart-row">
+                <button onclick="addToCart('Dog Food', 850, 'image/dogfood.jpeg')">
+                    Add To Cart
+                </button>
+            </div>
+            <h3>Dog Food</h3>
+            <p class="price">৳850 <span>৳950</span></p>
+        </div>
+
+        <div class="product-box">
+            <span class="discount">-15%</span>
+            <img src="image/toy.jpeg" alt="Cat Toy">
+            <div class="cart-row">
+                <button onclick="addToCart('Cat Toy', 650, 'image/toy.jpeg')">
+                    Add To Cart
+                </button>
+            </div>
+            <h3>Cat Toy</h3>
+            <p class="price">৳650 <span>৳780</span></p>
+        </div>
+
+        <div class="product-box">
+            <span class="discount">-5%</span>
+            <img src="image/shampoo.jpeg" alt="Pet Shampoo">
+            <div class="cart-row">
+                <button onclick="addToCart('Pet Shampoo', 420, 'image/shampoo.jpeg')">
+                    Add To Cart
+                </button>
+            </div>
+            <h3>Pet Shampoo</h3>
+            <p class="price">৳420 <span>৳500</span></p>
+        </div>
+
+        <div class="product-box">
+            <span class="discount">-20%</span>
+            <img src="image/Adobe Express - file.jpg" alt="Pet Bed">
+            <div class="cart-row">
+                <button onclick="addToCart('Pet Bed', 1850, 'image/Adobe Express - file.jpg')">
+                    Add To Cart
+                </button>
+            </div>
+            <h3>Pet Bed</h3>
+            <p class="price">৳1850 <span>৳2300</span></p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="contact-title">
+        <h2>Contact <span>Us</span></h2>
+        <p>Any questions? Feel free to message us!</p>
+    </div>
+
+    <div class="contact-container">
+        <form action="contact_process.php" method="POST">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="number" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="subject" placeholder="Subject">
+            </div>
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <button type="submit" class="main-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>PetMart</h3>
+            <p>Your one-stop shop for all pet needs. Quality products and fast delivery guaranteed.</p>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cat.html">Cat Supplies</a></li>
+            <li><a href="dog.html">Dog Supplies</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p><i class='bx bxs-map'></i> Savar, Dhaka, Bangladesh</p>
+            <p><i class='bx bxs-phone'></i> +880 1827 134215</p>
+            <p><i class='bx bxs-envelope'></i> info@petmart.com</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2026 PetMart | All Rights Reserved</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

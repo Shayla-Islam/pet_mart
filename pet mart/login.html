@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetMart | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body style="background: #f4f4f4;">
+
+<header>
+    <h3 class="logo"><a href="index.html" style="color: #222;">PetMart</a></h3>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cat.html">Cat</a></li>
+        <li><a href="dog.html">Dog</a></li>
+        <li><a href="bird.html">Bird</a></li>
+        <li><a href="rabbit.html">Rabbit</a></li>
+    </ul>
+    <div class="nav-icon">
+        <i class='bx bx-search' onclick="toggleSearch()"></i>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class='bx bx-basket'></i><span id="cartCount">0</span>
+        </div>
+        <a href="login.html"><i class='bx bx-user' style="color: #ee1c47;"></i></a>
+    </div>
+</header>
+
+<section class="login-section">
+    <div class="login-card">
+        <div class="login-header">
+            <i class='bx bxs-user-pin' style="font-size: 50px; color: #ee1c47;"></i>
+            <h2>User Login</h2>
+            <p>Enter your details to access your account</p>
+        </div>
+
+        <form action="login.php" method="POST">
+            <div class="input-group">
+                <label><i class='bx bx-user'></i> Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+            </div>
+
+            <div class="input-group">
+                <label><i class='bx bx-envelope'></i> Email</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label><i class='bx bx-phone'></i> Phone Number</label>
+                <input type="text" name="phone" placeholder="017XXXXXXXX" required>
+            </div>
+            
+            <div class="input-group">
+                <label><i class='bx bx-lock-alt'></i> Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Login to Account</button>
+        </form>
+
+        <div class="login-footer">
+            <p>Go back to <a href="index.html">Homepage</a></p>
+        </div>
+    </div>
+</section>
+
+<div id="searchContainer"><input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search..."></div>
+<div id="cartDropdown"><h3>Your Cart</h3><ul id="cartItems"></ul><a href="cart.html" class="main-btn" style="display:block; text-align:center;">View Full Cart</a></div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>PetMart</h3>
+            <p>Your one-stop shop for all pet needs. Quality products and fast delivery guaranteed.</p>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cat.html">Cat Supplies</a></li>
+            <li><a href="dog.html">Dog Supplies</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p><i class='bx bxs-map'></i> Savar, Dhaka, Bangladesh</p>
+            <p><i class='bx bxs-phone'></i> +880 1827 134215</p>
+            <p><i class='bx bxs-envelope'></i> info@petmart.com</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2026 PetMart | All Rights Reserved</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Jost",sans-serif;
+    list-style:none;
+    text-decoration:none;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:20px 8%;
+    background:white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+}
+
+/* লোগোর ভেতরের লিঙ্ক সব পেজে কালো রাখার জন্য */
+.logo a {
+    color: #222 !important;
+    text-decoration: none;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:#222;
+    font-size:16px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:red;
+}
+
+.nav-icon{
+    display:flex;
+    gap:20px;
+    align-items: center;
+}
+
+.nav-icon i{
+    font-size:22px;
+    color:#222;
+    cursor: pointer;
+    transition:.3s;
+}
+
+.nav-icon i:hover{
+    color:red;
+}
+
+/* SEARCH BAR */
+#searchContainer {
+    position: fixed;
+    top: 85px;
+    right: 8%;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1001;
+}
+
+#searchContainer input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+    outline: none;
+}
+
+/* HOME SECTION */
+.main-home{
+    width:100%;
+    min-height:100vh;
+    background:url(image/cover.png) no-repeat center center/cover;
+    display:flex;
+    align-items:center;
+    padding:120px 8% 40px;
+}
+
+.main-text{
+    max-width:650px;
+}
+
+.main-text h1{
+    color:#ee1c47;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.main-text p{
+    font-size:clamp(32px, 7vw, 65px);
+    line-height:1.1;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.main-btn{
+    display:inline-block;
+    background:#ee1c47;
+    color:white;
+    padding:12px 24px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.main-btn:hover{
+    background:black;
+}
+
+/* ABOUT SECTION */
+.about{
+    width:100%;
+    padding:80px 8%;
+    background:#fff;
+}
+
+.about-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.about-title h2{
+    font-size:42px;
+    color:#ee1c47;
+    font-weight:700;
+}
+
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-img img{
+    width:100%;
+    border-radius:12px;
+}
+
+.about-text h3{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:17px;
+    color:#666;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+.about-btn{
+    display:inline-block;
+    background:#222;
+    color:white;
+    padding:12px 28px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+/* PRODUCTS */
+.products{
+    width:100%;
+    padding:80px 8%;
+    background:#f8f8f8;
+}
+
+.products-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.products-title h2{
+    font-size:42px;
+    color:#222;
+}
+
+.products-title span{
+    color:#ee1c47;
+}
+
+.product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+    gap:25px;
+}
+
+.product-box{
+    background:#fff;
+    padding:15px;
+    border-radius:10px;
+    position:relative;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    transition:.3s;
+}
+
+.product-box:hover{
+    transform:translateY(-10px);
+}
+
+.product-box img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+}
+
+.product-box h3{
+    margin: 15px 0 10px;
+    font-size: 20px;
+}
+
+.price{
+    font-size:20px;
+    color:#ee1c47;
+    font-weight:700;
+}
+
+.price span{
+    color:#999;
+    text-decoration:line-through;
+    font-size:15px;
+    margin-left:10px;
+}
+
+/* Add to Cart Button Style (Updated) */
+.cart-row button {
+    width: 100%;
+    border: none;
+    background: #ee1c47; /* লাল ব্যাকগ্রাউন্ড */
+    color: #fff;         /* সাদা টেক্সট */
+    padding: 12px 20px;  /* বাটনটি বড় করার জন্য */
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: block;
+}
+
+.cart-row button:hover {
+    background: #222;    /* মাউস নিলে কালো হবে */
+}
+
+/* CART DROPDOWN */
+.cart-icon{
+    position:relative;
+}
+
+#cartCount{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    background:red;
+    color:white;
+    font-size:12px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#cartDropdown{
+    position:fixed;
+    right:8%;
+    top:80px;
+    width:280px;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    padding:20px;
+    display:none;
+    border-radius:10px;
+    z-index:999;
+}
+
+#cartItems li{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* FOOTER */
+footer{
+    background: #1e1e27;
+    color: white;
+    padding: 60px 8% 20px;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-box h3{
+    color: #ee1c47;
+    margin-bottom: 20px;
+}
+
+.footer-box p, .footer-box li{
+    color: #ccc;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.footer-box li a{
+    color: #ccc;
+}
+
+.footer-box li a:hover{
+    color: #ee1c47;
+}
+
+.copyright{
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    color: #777;
+}
+
+/* POPUP & ANIMATIONS */
+.popup{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#222;
+    color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    z-index:9999;
+    animation:fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateX(-50%) translateY(20px);}
+    to{opacity:1; transform:translateX(-50%) translateY(0);}
+}
+
+/* LOGIN SECTION */
+.login-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+.login-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    font-size: 28px;
+    color: #222;
+    margin-top: 10px;
+}
+
+.login-header p {
+    color: #777;
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ee1c47;
+    box-shadow: 0 0 5px rgba(238, 28, 71, 0.2);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ee1c47;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #222;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-footer a {
+    color: #ee1c47;
+    font-weight: 600;
+}
+/* CONTACT SECTION */
+.contact {
+    width: 100%;
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-title h2 {
+    font-size: 42px;
+    color: #222;
+}
+
+.contact-title span {
+    color: #ee1c47;
+}
+
+.contact-title p {
+    color: #777;
+    margin-top: 10px;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-container form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-container form .input-box input {
+    width: 48%; /* দুটি ইনপুট পাশাপাশি রাখার জন্য */
+    padding: 15px;
+    font-size: 16px;
+    color: #222;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+/* মোবাইল ডিভাইসের জন্য ইনপুট বক্স ১০০% করা */
+@media (max-width: 600px) {
+    .contact-container form .input-box input {
+        width: 100%;
+    }
+}
+
+.contact-container form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    color: #222;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.contact-container form .main-btn {
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    font-weight: 600;
+}
+
+.contact-container form input:focus, 
+.contact-container form textarea:focus {
+    border-color: #ee1c47;
+    background: #fff;
+}

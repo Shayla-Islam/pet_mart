@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PetMart | Dog Supplies</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<header>
+    <h3 class="logo"><a href="index.html" style="color: #222;">PetMart</a></h3>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cat.html">Cat</a></li>
+        <li><a href="dog.html" style="color:red">Dog</a></li>
+        <li><a href="bird.html">Bird</a></li>
+        <li><a href="rabbit.html">Rabbit</a></li>
+    </ul>
+    <div class="nav-icon">
+        <i class='bx bx-search' onclick="toggleSearch()"></i>
+        <div class="cart-icon" onclick="toggleCart()"><i class='bx bx-basket'></i><span id="cartCount">0</span></div>
+        <a href="login.html"><i class='bx bx-user'></i></a>
+    </div>
+</header>
+
+<div id="searchContainer"><input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search dogs..."></div>
+<div id="cartDropdown"><h3>Your Cart</h3><ul id="cartItems"></ul><a href="cart.html" class="main-btn" style="width:100%; text-align:center;">View Full Cart</a></div>
+
+<section class="products" style="margin-top: 120px;">
+    <div class="products-title"><h2>Dog <span>Supplies</span></h2></div>
+    <div class="product-container">
+    <div class="product-box">
+        <h3>Puppy Kibble</h3>
+        <img src="image/Documents/dog/dog food.jpeg">
+        <p class="price">৳1200</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Puppy Kibble', 1200, 'image/Documents/dog/dog food.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+    <div class="product-box">
+        <h3>Leather Leash</h3>
+        <img src="image/Documents/dog/dog lather belt.jpeg">
+        <p class="price">৳450</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Leather Leash', 450, 'image/Documents/dog/dog lather belt.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+    <div class="product-box">
+        <h3>Chew Bone</h3>
+        <img src="image/Documents/dog/dog bone treats.jpeg">
+        <p class="price">৳300</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Chew Bone', 300, 'image/Documents/dog/dog bone treats.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+    <div class="product-box">
+        <h3>Dog Bed</h3>
+        <img src="image/Documents/dog/dog bed.jpeg">
+        <p class="price">৳2500</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Dog Bed', 2500, 'image/Documents/dog/dog bed.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+    <div class="product-box">
+        <h3>Pet Shampoo</h3>
+        <img src="image/Documents/dog/dog shampoo.jpeg">
+        <p class="price">৳600</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Pet Shampoo', 600, 'image/Documents/dog/dog shampoo.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+    <div class="product-box">
+        <h3>Dog Ball</h3>
+        <img src="image/Documents/dog/dog toy.jpeg">
+        <p class="price">৳150</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Dog Ball', 150, 'image/Documents/dog/dog toy.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+    <div class="product-box">
+        <h3>Training Treats</h3>
+        <img src="image/Documents/dog/dog treats.jpeg">
+        <p class="price">৳400</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Training Treats', 400, 'image/Documents/dog/dog treats.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+    <div class="product-box">
+        <h3>Dog Collar</h3>
+        <img src="image/Documents/dog/dog belt.jpeg">
+        <p class="price">৳350</p>
+        <div class="cart-row">
+            <button onclick="addToCart('Dog Collar', 350, 'image/Documents/dog/dog belt.jpeg')">Add To Cart</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>PetMart</h3>
+            <p>Your one-stop shop for all pet needs. Quality products and fast delivery guaranteed.</p>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cat.html">Cat Supplies</a></li>
+            <li><a href="dog.html">Dog Supplies</a></li>
+            <li><a href="rabbit.html">Rabbit Supplies</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p><i class='bx bxs-map'></i> Savar, Dhaka, Bangladesh</p>
+            <p><i class='bx bxs-phone'></i> +880 1827 134215</p>
+            <p><i class='bx bxs-envelope'></i> info@petmart.com</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2026 PetMart | All Rights Reserved</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
